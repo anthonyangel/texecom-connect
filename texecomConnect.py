@@ -401,7 +401,7 @@ class TexecomConnect(object):
                 # this ends up recursively calling recvresponse; however as our retry * timeout (3 * 2 == 6) is
                 # far less than the 30 seconds between idle commands that won't be an issue
                 if self.lastIdleCommand == 0:
-                    result = self.lcddisplay()
+                    result = self.get_date_time()
                 elif self.lastIdleCommand == 1:
                     result = self.get_log_pointer()
                 else:
